@@ -7,13 +7,3 @@ functions = "functions"
   for = "/*"
   [headers.values]
     Access-Control-Allow-Origin = "*"
-
-## Learn more about redirects here
-## https://docs.netlify.com/routing/redirects/#syntax-for-the-netlify-configuration-file
-## https://docs.netlify.com/routing/redirects/redirect-options/
-
-[[redirects]]
-  from = "/api/*" # simplify all calls to serverless functions
-  to = "/.netlify/functions/:guildId" # all function calls will go to this path
-  status = 200 # ok code
-  headers = { Access-Control-Allow-Origin = "*" }

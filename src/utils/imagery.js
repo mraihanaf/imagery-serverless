@@ -7,7 +7,7 @@ const getImageryChannel = async function getImageryChannel(guildId) {
 const getGuildMedia = async function getGuildMedia(guildId){
     const isExist = await getImageryChannel(guildId)
     if(!isExist) return null
-    const gallery = await redis?.lrange(`imagery_gallery_${guildId}`);
+    const gallery = await redis?.lrange(`imagery_gallery_${guildId}`, 0, -1);
     if(!gallery) return []
     return gallery.map(media => JSON.parse(media))
 }
